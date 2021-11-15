@@ -159,7 +159,7 @@ def publish():
 			text = 'Subject: Canadian christmas\n'+name+', you were picked to find a gift for '+receiverName+'!\nCanadian christmas date: '+ui.date.text()+'\nMax budget: '+ui.maxBudget.text()+'\n'
 			report = report+text
 			try: 
-				smtpObj.sendmail(' '+senderAddress+' ', ' '+toAddress+' ', text)
+				smtpObj.sendmail(' '+senderAddress+' ', ' '+address+' ', text)
 			except smtplib.SMTPException as e: 
 				InformationBox("Failed to send emails", e)
 				return
