@@ -72,10 +72,6 @@ class userGroup:
 		self.lUsers = []
 	def checkName(self, name):
 		return self.name == name
-	def name(self):
-		return self.name
-	def users(self):
-		return self.lUsers
 	def push(self, index):
 		self.lUsers.append(index)
 	def pop(self):
@@ -83,8 +79,6 @@ class userGroup:
 			return self.lUsers.pop()
 		else:
 			return None
-	def remove(index):
-		self.lUsers.remove(index)
 	def shuffle(self):
 		random.shuffle(self.lUsers)
 
