@@ -61,7 +61,6 @@ def checkExcludes(l):
 			currentText = ui.users.item(index, 0).text()
 			selectedText = ui.users.item(nextRow, 0).text()
 			excludesText = excludes.text()
-#			print(currentText+'> '+'selected:'+selectedText+' excludes:'+excludesText)
 			if excludesText.find(selectedText) >= 0:
 				print(currentText+'> '+'selected:'+selectedText+' excludes:'+excludesText)
 				return False
@@ -165,11 +164,11 @@ def publish():
 			receiverName = ui.users.item(lShuffledUserIndexes[next], 0).text()
 			text = 'Subject: Canadian christmas\n'+name+', you were picked to find a gift for '+receiverName+'!\nCanadian christmas date: '+ui.date.text()+'\nMax budget: '+ui.maxBudget.text()+'\n'
 			report = report+text
-#			try: 
-#				smtpObj.sendmail(' '+senderAddress+' ', ' '+toAddress+' ', text)
-#			except smtplib.SMTPException as e: 
-#				InformationBox("Failed to send emails", e)
-#				return
+			try: 
+				smtpObj.sendmail(' '+senderAddress+' ', ' '+toAddress+' ', text)
+			except smtplib.SMTPException as e: 
+				InformationBox("Failed to send emails", e)
+				return
 		# close smtp server
 		smtpObj.quit()
 		# dump report
